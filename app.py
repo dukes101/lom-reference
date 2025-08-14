@@ -44,12 +44,12 @@ app.layout = [
     html.Div([
 
         ## HEADER DASHBOARD TITLE
-        html.H1('Team Performance', style={'color': 'white', 'textAlign': 'center', 'padding': '20px', 'backgroundColor': 'black'}),
+        html.H1('League of Morons History', style={'color': 'white', 'textAlign': 'center', 'padding': '20px', 'backgroundColor': 'black'}),
 
         ## DIV LABEL W TEAM DROPDOWN
         html.Div([
 
-            html.Label('Team:', style={'font-size': '20px', 'font-weight': 'bold', 'margin-right': '10px', 'margin-left': '5px', 'color': 'black'}),
+            html.Label('Select Moron:', style={'font-size': '20px', 'font-weight': 'bold', 'margin-right': '10px', 'margin-left': '5px', 'color': 'black'}),
 
             dcc.Dropdown(
                 options=[{'label': i, 'value': i} for i in dfPerformanceCards['Team'].unique()],
@@ -58,7 +58,7 @@ app.layout = [
                 style={'width': '200px'}
                 )
             ],
-            style={'display': 'flex', 'justify-content': 'center', 'align-items': 'center', 'flex-direction': 'row'}),
+            style={'display': 'flex', 'justify-content': 'center', 'align-items': 'center', 'flex-direction': 'row'}), # DIV for dropdown
 
         ## DIV TOP HALF
         html.Div([
@@ -66,13 +66,13 @@ app.layout = [
             ## DIV LEAGUE STATS
             html.Div([
 
-                html.H2('League Stats', style={'color': 'black', 'textAlign': 'center', 'border': '5px solid #ddd', 'borderRadius': '5px'}),
+                html.H2('Performance', style={'color': 'black', 'textAlign': 'center', 'border': '5px solid #ddd', 'borderRadius': '5px'}),
 
                 ## GRID LEAGUE STATS
                 dag.AgGrid(
                     id='league-stats-grid',
                     rowData=dfLeagueStats.to_dict('records'),
-                    columnDefs=[{'field': 'Metric'}, {'field': 'Value'}, {'headerName': 'League Rank', 'field': 'Rank'}],
+                    columnDefs=[{'field': 'Metric'}, {'field': 'Value'}, {'field': 'Rank'}],
                     columnSize="responsiveSizeToFit",
                     getRowStyle=getRowStyle,
                     dashGridOptions={"rowHeight": 39, "headerHeight": 45, "animateRows": False}
@@ -85,7 +85,7 @@ app.layout = [
             html.Div([
 
                 ## HEADER CARDS
-                html.H2('All Time', style={'color': 'black', 'textAlign': 'center', 'border': '5px solid #ddd', 'borderRadius': '5px'}),
+                html.H2('Accolades', style={'color': 'black', 'textAlign': 'center', 'border': '5px solid #ddd', 'borderRadius': '5px'}),
 
                 ## DIV 1ST ROW CARDS
                 html.Div([
@@ -94,34 +94,41 @@ app.layout = [
 
                         dbc.CardBody(
                             [
-                                html.H3("CHAMPIONSHIPS", className="card-title", style={'color': 'black', 'textAlign': 'center'}),
+                                html.H3("CHAMP", className="card-title", style={'color': 'black', 'textAlign': 'center'}),
                                 html.P(id='championships-value', className="card-text",
-                                      style={'color': 'black', 'textAlign': 'center', 'fontSize': 20}),
+                                      style={'color': 'black', 'textAlign': 'center', 'font-size': 20}),
                                 ]
-                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'width': '175px', 'margin': '10px'}
+                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'margin': '10px', 'flex': '1', 'minWidth': '0'}
                         ),
                     dbc.Card(
 
                         dbc.CardBody(
                             [
-                                html.H3("TOP 3 FINISHES", className="card-title", style={'color': 'black', 'textAlign': 'center'}),
+                                html.H3("TOP 3", className="card-title", style={'color': 'black', 'textAlign': 'center'}),
                                 html.P(id='top-3-finishes-value', className="card-text",
-                                      style={'color': 'black', 'textAlign': 'center', 'fontSize': 20}),
+                                      style={'color': 'black', 'textAlign': 'center', 'font-size': 20}),
                                 ]
-                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'width': '175px', 'margin': '10px'}
+                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'margin': '10px', 'flex': '1', 'minWidth': '0'}
                         ),
                     dbc.Card(
 
                         dbc.CardBody(
                             [
-                                html.H3("TOP 5 FINISHES", className="card-title", style={'color': 'black', 'textAlign': 'center'}),
+                                html.H3("TOP 5", className="card-title", style={'color': 'black', 'textAlign': 'center'}),
                                 html.P(id='top-5-finishes-value', className="card-text",
-                                      style={'color': 'black', 'textAlign': 'center', 'fontSize': 20}),
+                                      style={'color': 'black', 'textAlign': 'center', 'font-size': 20}),
                                 ]
-                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'width': '175px', 'margin': '10px'}
+                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'margin': '10px', 'flex': '1', 'minWidth': '0'}
                         ),
                     ],
-                         style={'display': 'flex', 'justifyContent': 'space-around', 'backgroundColor': 'white'}),
+                         style={'display': 'flex'
+                               ,'justifyContent': 'space-around'
+                               ,'backgroundColor': 'white'
+                               #,'border': '5px solid #ddd'
+                               ,'alignItems': 'stretch'
+                               ,'width': '100%'  # <-- make container full width
+                               ,'boxSizing': 'border-box'  # <-- include padding/border in width
+                               ,'border': '2px solid red'}),
 
                 ## DIV 2ND ROW CARDS
                 html.Div([
@@ -133,7 +140,7 @@ app.layout = [
                                 html.P(id='reg-season-champ-value', className="card-text",
                                       style={'color': 'black', 'textAlign': 'center', 'fontSize': 20}),
                                 ]
-                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'width': '175px', 'margin': '10px'}
+                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'margin': '10px', 'flex': '1', 'minWidth': '0'}
                         ),
                     dbc.Card(
                         dbc.CardBody(
@@ -142,7 +149,7 @@ app.layout = [
                                 html.P(id='record-value', className="card-text",
                                       style={'color': 'black', 'textAlign': 'center', 'fontSize': 20}),
                                 ]
-                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'width': '175px', 'margin': '10px'}
+                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'margin': '10px', 'flex': '1', 'minWidth': '0'}
                         ),
                     dbc.Card(
                         dbc.CardBody(
@@ -151,10 +158,17 @@ app.layout = [
                                 html.P(id='playoff-record-value', className="card-text",
                                       style={'color': 'black', 'textAlign': 'center', 'fontSize': 20}),
                                 ]
-                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'width': '175px', 'margin': '10px'}
+                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'margin': '10px', 'flex': '1', 'minWidth': '0'}
                         ),
                     ],
-                         style={'display': 'flex', 'justifyContent': 'space-around', 'backgroundColor': 'white'}),
+                         style={'display': 'flex'
+                               ,'justifyContent': 'space-around'
+                               ,'backgroundColor': 'white'
+                               #,'border': '5px solid #ddd'
+                               ,'alignItems': 'stretch'
+                               ,'width': '100%'  # <-- make container full width
+                               ,'boxSizing': 'border-box'  # <-- include padding/border in width
+                               ,'border': '2px solid red'}),
 
                 ## DIV 3RD ROW CARDS
                 html.Div([
@@ -162,11 +176,11 @@ app.layout = [
                     dbc.Card(
                         dbc.CardBody(
                             [
-                                html.H3("SEASONS PLAYED", className="card-title", style={'color': 'black', 'textAlign': 'center'}),
+                                html.H3("SEASONS", className="card-title", style={'color': 'black', 'textAlign': 'center'}),
                                 html.P(id='seasons-value', className="card-text",
                                       style={'color': 'black', 'textAlign': 'center', 'fontSize': 20}),
                                 ]
-                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'width': '175px', 'margin': '10px'}
+                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'margin': '10px', 'flex': '1', 'minWidth': '0'}
                         ),
                     dbc.Card(
                         dbc.CardBody(
@@ -175,7 +189,7 @@ app.layout = [
                                 html.P(id='playoff-app-value', className="card-text",
                                       style={'color': 'black', 'textAlign': 'center', 'fontSize': 20}),
                                 ]
-                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'width': '175px', 'margin': '10px'}
+                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'margin': '10px', 'flex': '1', 'minWidth': '0'}
                         ),
                     dbc.Card(
                         dbc.CardBody(
@@ -184,13 +198,20 @@ app.layout = [
                                 html.P(id='last-place-value', className="card-text",
                                       style={'color': 'black', 'textAlign': 'center', 'fontSize': 20}),
                                 ]
-                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'width': '175px', 'margin': '10px'}
+                            ), style={'border': '2px solid #ddd', 'borderRadius': '2px', 'height': '100px', 'margin': '10px', 'flex': '1', 'minWidth': '0'}
                         ),
                     ],
-                         style={'display': 'flex', 'justifyContent': 'space-around', 'backgroundColor': 'white'}
+                         style={'display': 'flex'
+                               ,'justifyContent': 'space-around'
+                               ,'backgroundColor': 'white'
+                               #,'border': '5px solid #ddd'
+                               ,'alignItems': 'stretch'
+                               ,'width': '100%'  # <-- make container full width
+                               ,'boxSizing': 'border-box'  # <-- include padding/border in width
+                               ,'border': '2px solid red'}
                          )
                 ],
-                     style={'display': 'flex', 'flex-direction': 'column', 'alignItems': 'center', 'backgroundColor': 'white', 'border': '5px solid #ddd', 'width': '33%'}),
+                     style={'display': 'flex', 'flex-direction': 'column', 'alignItems': 'center', 'backgroundColor': 'white', 'border': '5px solid #ddd', 'flex': '1'}), ## STYLE CARDS
 
             ## DIV YEAR BY YEAR
             html.Div([
@@ -217,10 +238,12 @@ app.layout = [
                 ## FIGURE YEAR BY YEAR
                 dcc.Graph(
                     figure={},
-                    id='year-by-year-figure'
+                    id='year-by-year-figure',
+                    style={'width': '100%', 'height': '420px'},
+                    config={'responsive': True}
                     )
                 ],
-                     style={'display': 'flex', 'flex-direction': 'column', 'alignItems': 'center', 'backgroundColor': 'white', 'border': '5px solid #ddd', 'width': '33%'}) ## STYLE FIGURE
+                     style={'display': 'flex', 'flex-direction': 'column', 'alignItems': 'center', 'backgroundColor': 'white', 'border': '5px solid #ddd', 'flex': '1'}) ## STYLE FIGURE
         ],
                  style={'display': 'flex', 'flex-direction': 'row'}), ## STYLE TOP HALF
 
@@ -235,7 +258,7 @@ app.layout = [
                 ## DIV MOST WEEK POINTS
                 html.Div([
 
-                  html.H4('Most Week Points', style={'color': 'black', 'textAlign': 'left'}),
+                  html.H4('Highest Weekly Score', style={'color': 'black', 'textAlign': 'center'}),
 
                   ## GRID MOST WEEK POINTS
                   dag.AgGrid(
@@ -252,7 +275,7 @@ app.layout = [
                 ## DIV LARGEST WINS
                 html.Div([
 
-                    html.H4('Largest Wins', style={'color': 'black', 'textAlign': 'left'}),
+                    html.H4('Largest Wins', style={'color': 'black', 'textAlign': 'center'}),
 
                     ## GRID LARGEST WINS
                     dag.AgGrid(
@@ -278,7 +301,7 @@ app.layout = [
                 ## DIV LEAST WEEK POINTS
                 html.Div([
 
-                  html.H4('Least Week Points', style={'color': 'black', 'textAlign': 'left'}),
+                  html.H4('Lowest Weekly Score', style={'color': 'black', 'textAlign': 'center'}),
 
                   ## GRID LEAST WEEK POINTS
                   dag.AgGrid(
@@ -295,7 +318,7 @@ app.layout = [
                 ## DIV WORST LOSSES
                 html.Div([
 
-                    html.H4('Worst Losses', style={'color': 'black', 'textAlign': 'left'}),
+                    html.H4('Worst Losses', style={'color': 'black', 'textAlign': 'center'}),
 
                     ## GRID WORST LOSSES
                     dag.AgGrid(
@@ -314,17 +337,17 @@ app.layout = [
             ## DIV OPPONENTS
             html.Div([
 
-                html.H2('Opponents', style={'color': 'black', 'textAlign': 'center', 'border': '5px solid #ddd', 'borderRadius': '5px'}), ## HEADER OPPONENTS
+                html.H2('Head to Head', style={'color': 'black', 'textAlign': 'center', 'border': '5px solid #ddd', 'borderRadius': '5px'}), ## HEADER OPPONENTS
 
                 html.Div([
 
-                    html.H4('Stats Against Opponents', style={'color': 'black', 'textAlign': 'left'}),
+                    html.H4('Stats Against Morons', style={'color': 'black', 'textAlign': 'center'}),
 
                     ## GRID OPPONENTS
                     dag.AgGrid(
                         id='opp-grid',
                         rowData=dfOpponents.to_dict('records'),
-                        columnDefs=[{'field': 'Opponent'}, {'field': 'PointsFor'}, {'field': 'PointsAgainst'}, {'field': 'Win %'}, {'field': 'TotalMatchups'}],
+                        columnDefs=[{'field': 'Moron'}, {'field': 'Pts For'}, {'field': 'Pts Against'}, {'field': 'Win %'}, {'field': 'Matchups'}],
                         columnSize="responsiveSizeToFit",
                         dashGridOptions={"rowHeight": 30, "headerHeight": 35, "animateRows": False},
                         style={'height': '308px'}
@@ -507,11 +530,11 @@ def update_worst_losses_grid(team):
 ## Updates opponent table
 def update_opp_table(team):
   df_team = dfOpponents[dfOpponents['Team'] == team]
-  data = [{'Opponent': df_team['Opponent'].iloc[row]
-           ,'PointsFor': df_team['PointsFor'].iloc[row]
-           ,'PointsAgainst': df_team['PointsAgainst'].iloc[row]
+  data = [{'Moron': df_team['Opponent'].iloc[row]
+           ,'Pts For': df_team['PointsFor'].iloc[row]
+           ,'Pts Against': df_team['PointsAgainst'].iloc[row]
            ,'Win %': df_team['Win %'].iloc[row]
-           ,'TotalMatchups': df_team['TotalMatchups'].iloc[row]} for row in range(len(df_team))]
+           ,'Matchups': df_team['TotalMatchups'].iloc[row]} for row in range(len(df_team))]
   return data
 
 ############################################### OPPONENTS GRIDS ###############################################
@@ -537,10 +560,9 @@ def update_year_by_year_figure(team, metric):
   fig1 = px.line(dfMerged,
                  x='Year',
                  y=[metric,f'{metric}_avg'],
-                 #title=f'{metric} by Year for {team}',
                  template='seaborn')
   fig1.update_xaxes(type='category')
-  fig1.update_layout(showlegend=False)
+  fig1.update_layout(showlegend=False, xaxis_title=None, yaxis_title=None)
 
   fig1.data[1].update(name='Average', line_dash='dash')
   return fig1
