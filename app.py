@@ -20,7 +20,7 @@ dfWorstLosses = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-refe
 dfOpponents = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/tpdash_opponents.csv')
 
 ## Additional Items
-my_list = list(range(len(dfLeagueStats[dfLeagueStats['Team'] == 'Luca Hurst']))) #list of metrics
+my_list = list(range(len(dfLeagueStats[dfLeagueStats['Team'] == 'Luca']))) #list of metrics
 YearByYearList = list(dfYearbyYear.columns)[2:] #yearbyyear columns
 
 app = Dash()
