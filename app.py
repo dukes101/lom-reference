@@ -40,7 +40,7 @@ getRowStyle = {
             ,"style": {"backgroundColor": "#f75352"},
         },
     ],
-    "defaultStyle": {"backgroundColor": "grey", "color": "white"},
+    "defaultStyle": {"backgroundColor": "#8d8f91", "color": "white"},
 }
 
 getRowStyleHigh = {
@@ -56,6 +56,19 @@ getRowStyleLow = {
             ,"style": {"backgroundColor": "#f75352"}
         }
 ]}
+
+getRowStyleH2H = {
+    "styleConditions": [
+        {   "condition": "params.data.WinPct > 50"
+            ,"style": {"backgroundColor": "lightgreen"},
+        },
+        {
+            "condition": "params.data.WinPct < 50"
+            ,"style": {"backgroundColor": "#f75352"}
+        }
+    ],
+    "defaultStyle": {"backgroundColor": "#8d8f91", "color": "white"},
+}
 ############################################### ALL METRIC GRID STYLING ###############################################
 
 app.layout = [
@@ -176,8 +189,9 @@ app.layout = [
                 ## GRID OPPONENTS
                 ,dag.AgGrid(id='opp-grid'
                            ,rowData=dfOpponents.to_dict('records')
-                           ,columnDefs=[{'field': 'Moron'}, {'field': 'Pts For'}, {'field': 'Pts Against'}, {'field': 'Win %'}, {'field': 'Matchups'}]
+                           ,columnDefs=[{'field': 'Moron'}, {'field': 'Pts For'}, {'field': 'Pts Against'}, {'field': 'WinPct', 'headerName': 'Win %'}, {'field': 'Matchups'}]
                            ,columnSize="responsiveSizeToFit"
+                           ,getRowStyle=getRowStyleH2H
                            ,dashGridOptions={"rowHeight": 30, "headerHeight": 35, "animateRows": False}
                            ,style={'height': '305px'})
             ],className='grid') ## STYLE OPPONENTS
@@ -452,7 +466,7 @@ def update_opp_table(team):
   data = [{'Moron': df_team['Opponent'].iloc[row]
            ,'Pts For': df_team['PointsFor'].iloc[row]
            ,'Pts Against': df_team['PointsAgainst'].iloc[row]
-           ,'Win %': df_team['Win %'].iloc[row]
+           ,'WinPct': df_team['Win %'].iloc[row]
            ,'Matchups': df_team['TotalMatchups'].iloc[row]} for row in range(len(df_team))]
   return data
 
@@ -479,7 +493,7 @@ def update_year_by_year_figure(team, metric):
   fig1 = px.line(dfMerged,
                  x='Year',
                  y=[metric,f'{metric}_avg'],
-                 template='seaborn')
+                 template='plotly_dark')
   fig1.update_xaxes(type='category')
   fig1.update_layout(showlegend=False, xaxis_title=None, yaxis_title=None)
 

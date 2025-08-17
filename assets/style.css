@@ -38,7 +38,7 @@
 	flex-direction: column; /* Stack children (grid header + grid) vertically */
 	border: 2px solid #ddd;
 	flex: 1; /* Allow this div to grow and shrink to fill available space */
-	background-color: orange;
+	background-color: black;
 }
 
 /* Cards */
@@ -72,7 +72,9 @@
 	text-align: left;
 	font-size: 15px;
 	padding: 0px;
-	margin: 0px;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 0px;
 }
 
 .row {
