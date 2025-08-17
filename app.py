@@ -42,6 +42,20 @@ getRowStyle = {
     ],
     "defaultStyle": {"backgroundColor": "grey", "color": "white"},
 }
+
+getRowStyleHigh = {
+    "styleConditions": [
+        {   "condition": "params.data.Rank == '1st'"
+            ,"style": {"backgroundColor": "gold"}
+        }
+]}
+
+getRowStyleLow = {
+    "styleConditions": [
+        {   "condition": "params.data.Rank == '1st'"
+            ,"style": {"backgroundColor": "#f75352"}
+        }
+]}
 ############################################### ALL METRIC GRID STYLING ###############################################
 
 app.layout = [
@@ -58,7 +72,7 @@ app.layout = [
             html.Label('Moron:', className = 'dropdown-label')
 
             ,dcc.Dropdown(options=[{'label': i, 'value': i} for i in dfPerformanceCards['Team'].unique()]
-                         ,value='Luca Hurst'
+                         ,value='Luca'
                          ,id='team-dropdown'
                          ,style={'width': '200px'})
         ],style={'display': 'flex', 'flex-direction': 'row', 'align-items': 'center', 'justify-content': 'center', 'margin-bottom': '20px'})
@@ -185,8 +199,9 @@ app.layout = [
                     ## GRID MOST WEEK POINTS
                     ,dag.AgGrid(id='most-wk-points-grid'
                                ,rowData=dfMostSingleWeekPoints.to_dict('records')
-                               ,columnDefs=[{'field': 'Year'}, {'field': 'Week'}, {'field': 'Score'}, {'field': 'All Time Rank'}]
+                               ,columnDefs=[{'field': 'Year'}, {'field': 'Week'}, {'field': 'Score'}, {'field': 'Rank'}]
                                ,columnSize="responsiveSizeToFit"
+                               ,getRowStyle=getRowStyleHigh
                                ,dashGridOptions={"rowHeight": 30, "headerHeight": 35, "animateRows": False}
                                ,style={'height': '125px'})
                 ])
@@ -199,8 +214,9 @@ app.layout = [
                     ## GRID LARGEST WINS
                     ,dag.AgGrid(id='largest-wins-grid'
                                ,rowData=dfLargestWins.to_dict('records')
-                               ,columnDefs=[{'field': 'Year'}, {'field': 'Week'}, {'field': 'Against'}, {'field': 'W Margin'}, {'field': 'All Time Rank'}]
+                               ,columnDefs=[{'field': 'Year'}, {'field': 'Week'}, {'field': 'Against'}, {'field': 'W Margin'}, {'field': 'Rank'}]
                                ,columnSize="responsiveSizeToFit"
+                               ,getRowStyle=getRowStyleHigh
                                ,dashGridOptions={"rowHeight": 30, "headerHeight": 35, "animateRows": False}
                                ,style={'height': '125px'})
                 ])
@@ -219,8 +235,9 @@ app.layout = [
                     ## GRID LEAST WEEK POINTS
                     ,dag.AgGrid(id='least-wk-points-grid'
                               ,rowData=dfLeastSingleWeekPoints.to_dict('records')
-                              ,columnDefs=[{'field': 'Year'}, {'field': 'Week'}, {'field': 'Score'}, {'field': 'All Time Rank'}]
+                              ,columnDefs=[{'field': 'Year'}, {'field': 'Week'}, {'field': 'Score'}, {'field': 'Rank'}]
                               ,columnSize="responsiveSizeToFit"
+                              ,getRowStyle=getRowStyleLow
                               ,dashGridOptions={"rowHeight": 30, "headerHeight": 35, "animateRows": False}
                               ,style={'height': '125px'})
                 ])
@@ -233,8 +250,9 @@ app.layout = [
                     ## GRID WORST LOSSES
                     ,dag.AgGrid(id='worst-losses-grid'
                               ,rowData=dfWorstLosses.to_dict('records')
-                              ,columnDefs=[{'field': 'Year'}, {'field': 'Week'}, {'field': 'Against'}, {'field': 'L Margin'}, {'field': 'All Time Rank'}]
+                              ,columnDefs=[{'field': 'Year'}, {'field': 'Week'}, {'field': 'Against'}, {'field': 'L Margin'}, {'field': 'Rank'}]
                               ,columnSize="responsiveSizeToFit"
+                              ,getRowStyle=getRowStyleLow
                               ,dashGridOptions={"rowHeight": 30, "headerHeight": 35, "animateRows": False}
                               ,style={'height': '125px'})
                 ])
@@ -375,7 +393,7 @@ def update_league_stats_table(team):
 ## Updates Most Week Points Grid
 def update_most_week_points_grid(team):
   df_team = dfMostSingleWeekPoints[dfMostSingleWeekPoints['Team'] == team]
-  data = [{'Year': df_team['Year'].iloc[row], 'Week': df_team['Week'].iloc[row], 'Score': df_team['Score'].iloc[row], 'All Time Rank': df_team['All Time Rank'].iloc[row]} for row in range(len(df_team))]
+  data = [{'Year': df_team['Year'].iloc[row], 'Week': df_team['Week'].iloc[row], 'Score': df_team['Score'].iloc[row], 'Rank': df_team['All Time Rank'].iloc[row]} for row in range(len(df_team))]
   return data
 
 ## Largest Wins Callback
@@ -388,7 +406,7 @@ def update_most_week_points_grid(team):
 def update_largest_wins_grid(team):
   df_team = dfLargestWins[dfLargestWins['Team'] == team]
   data = [{'Year': df_team['Year'].iloc[row], 'Week': df_team['Week'].iloc[row], 'Against': df_team['Opponent'].iloc[row], 'W Margin': df_team['Winning Margin'].iloc[row]
-           ,'All Time Rank': df_team['All Time Rank'].iloc[row]} for row in range(len(df_team))]
+           ,'Rank': df_team['All Time Rank'].iloc[row]} for row in range(len(df_team))]
   return data
 
 ############################################### HIGHLIGHTS GRID ###############################################
@@ -403,7 +421,7 @@ def update_largest_wins_grid(team):
 ## Updates Least Week Points Grid
 def update_least_week_points_grid(team):
   df_team = dfLeastSingleWeekPoints[dfLeastSingleWeekPoints['Team'] == team]
-  data = [{'Year': df_team['Year'].iloc[row], 'Week': df_team['Week'].iloc[row], 'Score': df_team['Score'].iloc[row], 'All Time Rank': df_team['All Time Rank'].iloc[row]} for row in range(len(df_team))]
+  data = [{'Year': df_team['Year'].iloc[row], 'Week': df_team['Week'].iloc[row], 'Score': df_team['Score'].iloc[row], 'Rank': df_team['All Time Rank'].iloc[row]} for row in range(len(df_team))]
   return data
 
 ## Worst Losses Callback
@@ -416,7 +434,7 @@ def update_least_week_points_grid(team):
 def update_worst_losses_grid(team):
   df_team = dfWorstLosses[dfWorstLosses['Team'] == team]
   data = [{'Year': df_team['Year'].iloc[row], 'Week': df_team['Week'].iloc[row], 'Against': df_team['Opponent'].iloc[row], 'L Margin': df_team['Losing Margin'].iloc[row]
-           ,'All Time Rank': df_team['All Time Rank'].iloc[row]} for row in range(len(df_team))]
+           ,'Rank': df_team['All Time Rank'].iloc[row]} for row in range(len(df_team))]
   return data
 
 ############################################### LOWLIGHTS GRID ###############################################
