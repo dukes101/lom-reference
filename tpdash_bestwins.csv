@@ -1,31 +1,31 @@
 Year,Week,Team,Opponent,Winning Margin,All Time Rank
-2023,1.0,Alexander Nicoll,Cody Morton,92.1,4
-2019,1.0,Alexander Nicoll,Hayden Bingham,66.0,32
-2019,5.0,Alexander Nicoll,Evan Williams,55.0,55
-2020,9.0,Cody Morton,Hayden Bingham,90.5,5
-2020,1.0,Cody Morton,Evan Williams,80.4,9
-2023,2.0,Cody Morton,Zachary Toma,70.6,20
-2020,12.0,Dylan Peters,Hayden Bingham,98.5,2
-2019,4.0,Dylan Peters,Nate Stone,95.0,3
-2019,6.0,Dylan Peters,Alexander Nicoll,69.0,24
-2020,12.0,Evan Williams,Luca Hurst,70.2,21
-2024,5.0,Evan Williams,Luca Hurst,67.6,28
-2024,11.0,Evan Williams,Hayden Bingham,61.8,40
-2021,2.0,Gavin Tacto,Luca Hurst,86.4,7
-2023,8.0,Gavin Tacto,Dylan Peters,72.6,17
-2024,2.0,Gavin Tacto,Luca Hurst,71.4,18
-2020,3.0,Hayden Bingham,Nate Stone,69.6,22
-2018,6.0,Hayden Bingham,Cody Morton,69.0,24
-2019,6.0,Hayden Bingham,Matt Willadsen,66.0,32
-2018,3.0,Luca Hurst,Zachary Toma,86.0,8
-2020,1.0,Luca Hurst,Nate Stone,80.1,10
-2018,10.0,Luca Hurst,Zachary Toma,76.0,11
-2024,6.0,Matt Willadsen,Nate Stone,123.2,1
-2022,13.0,Matt Willadsen,Evan Williams,86.6,6
-2022,10.0,Matt Willadsen,Hayden Bingham,73.5,14
-2024,12.0,Nate Stone,Alexander Nicoll,73.2,15
-2020,12.0,Nate Stone,Matt Willadsen,58.5,45
-2024,13.0,Nate Stone,Luca Hurst,53.2,61
-2020,9.0,Zachary Toma,Luca Hurst,75.5,12
-2021,6.0,Zachary Toma,Hayden Bingham,74.8,13
-2022,7.0,Zachary Toma,Evan Williams,71.3,19
+2023,1.0,Alexander,Cody,92.1,4th
+2019,1.0,Alexander,Hayden,66.0,32nd
+2019,5.0,Alexander,Evan,55.0,55th
+2020,9.0,Cody,Hayden,90.5,5th
+2020,1.0,Cody,Evan,80.4,9th
+2023,2.0,Cody,Zachary,70.6,20th
+2020,12.0,Dylan,Hayden,98.5,2nd
+2019,4.0,Dylan,Nate,95.0,3rd
+2019,6.0,Dylan,Alexander,69.0,24th
+2020,12.0,Evan,Luca,70.2,21st
+2024,5.0,Evan,Luca,67.6,28th
+2024,11.0,Evan,Hayden,61.8,40th
+2021,2.0,Gavin,Luca,86.4,7th
+2023,8.0,Gavin,Dylan,72.6,17th
+2024,2.0,Gavin,Luca,71.4,18th
+2020,3.0,Hayden,Nate,69.6,22nd
+2018,6.0,Hayden,Cody,69.0,24th
+2019,6.0,Hayden,Matt,66.0,32nd
+2018,3.0,Luca,Zachary,86.0,8th
+2020,1.0,Luca,Nate,80.1,10th
+2018,10.0,Luca,Zachary,76.0,11th
+2024,6.0,Matt,Nate,123.2,1st
+2022,13.0,Matt,Evan,86.6,6th
+2022,10.0,Matt,Hayden,73.5,14th
+2024,12.0,Nate,Alexander,73.2,15th
+2020,12.0,Nate,Matt,58.5,45th
+2024,13.0,Nate,Luca,53.2,61st
+2020,9.0,Zachary,Luca,75.5,12th
+2021,6.0,Zachary,Hayden,74.8,13th
+2022,7.0,Zachary,Evan,71.3,19th

@@ -1,31 +1,31 @@
 Year,Week,Team,Score,Opponent,All Time Rank
-2020,3.0,Alexander Nicoll,183.1,Gavin Tacto,22
-2023,2.0,Alexander Nicoll,172.4,Matt Willadsen,47
-2023,10.0,Alexander Nicoll,170.4,Nate Stone,55
-2020,1.0,Cody Morton,207.2,Evan Williams,2
-2022,5.0,Cody Morton,196.8,Gavin Tacto,8
-2020,9.0,Cody Morton,195.8,Hayden Bingham,9
-2020,12.0,Dylan Peters,185.6,Hayden Bingham,15
-2020,4.0,Dylan Peters,180.8,Nate Stone,26
-2021,5.0,Dylan Peters,178.2,Matt Willadsen,28
-2024,5.0,Evan Williams,203.7,Luca Hurst,3
-2024,11.0,Evan Williams,202.8,Hayden Bingham,4
-2024,8.0,Evan Williams,186.5,Nate Stone,14
-2021,2.0,Gavin Tacto,198.4,Luca Hurst,7
-2023,8.0,Gavin Tacto,189.1,Dylan Peters,12
-2017,12.0,Gavin Tacto,188.0,Dylan Peters,13
-2020,3.0,Hayden Bingham,218.9,Nate Stone,1
-2023,3.0,Hayden Bingham,182.2,Dylan Peters,24
-2024,9.0,Hayden Bingham,176.9,Alexander Nicoll,33
-2018,10.0,Luca Hurst,202.0,Zachary Toma,5
-2019,5.0,Luca Hurst,200.0,Hayden Bingham,6
-2020,1.0,Luca Hurst,193.1,Nate Stone,11
-2024,6.0,Matt Willadsen,194.5,Nate Stone,10
-2018,11.0,Matt Willadsen,185.0,Zachary Toma,16
-2024,5.0,Matt Willadsen,184.6,Dylan Peters,17
-2020,12.0,Nate Stone,173.0,Matt Willadsen,46
-2023,4.0,Nate Stone,166.9,Cody Morton,67
-2024,11.0,Nate Stone,165.4,Gavin Tacto,71
-2020,4.0,Zachary Toma,184.6,Evan Williams,17
-2020,9.0,Zachary Toma,181.3,Luca Hurst,25
-2021,6.0,Zachary Toma,177.1,Hayden Bingham,29
+2020,3.0,Alexander,183.1,Gavin,22nd
+2023,2.0,Alexander,172.4,Matt,47th
+2023,10.0,Alexander,170.4,Nate,55th
+2020,1.0,Cody,207.2,Evan,2nd
+2022,5.0,Cody,196.8,Gavin,8th
+2020,9.0,Cody,195.8,Hayden,9th
+2020,12.0,Dylan,185.6,Hayden,15th
+2020,4.0,Dylan,180.8,Nate,26th
+2021,5.0,Dylan,178.2,Matt,28th
+2024,5.0,Evan,203.7,Luca,3rd
+2024,11.0,Evan,202.8,Hayden,4th
+2024,8.0,Evan,186.5,Nate,14th
+2021,2.0,Gavin,198.4,Luca,7th
+2023,8.0,Gavin,189.1,Dylan,12th
+2017,12.0,Gavin,188.0,Dylan,13th
+2020,3.0,Hayden,218.9,Nate,1st
+2023,3.0,Hayden,182.2,Dylan,24th
+2024,9.0,Hayden,176.9,Alexander,33rd
+2018,10.0,Luca,202.0,Zachary,5th
+2019,5.0,Luca,200.0,Hayden,6th
+2020,1.0,Luca,193.1,Nate,11th
+2024,6.0,Matt,194.5,Nate,10th
+2018,11.0,Matt,185.0,Zachary,16th
+2024,5.0,Matt,184.6,Dylan,17th
+2020,12.0,Nate,173.0,Matt,46th
+2023,4.0,Nate,166.9,Cody,67th
+2024,11.0,Nate,165.4,Gavin,71st
+2020,4.0,Zachary,184.6,Evan,17th
+2020,9.0,Zachary,181.3,Luca,25th
+2021,6.0,Zachary,177.1,Hayden,29th
