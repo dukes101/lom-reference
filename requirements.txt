@@ -4,3 +4,4 @@ dash-ag-grid
 dash-bootstrap-components
 pandas
 gunicorn
+python-dotenv
