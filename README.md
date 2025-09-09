@@ -1,6 +1,6 @@
 # League of Morons (LOM) Reference
 ## Overview
-This project is an interactive dashboard summarizing 8 years (and counting) of history from my ESPN Fantasy Football League. It pulls raw data directly from the ESPN Fantasy Football API and tracks:
+This project is an interactive dashboard built from scratch, summarizing 8 years (and counting) of history from my ESPN Fantasy Football League. It pulls raw data directly from the ESPN Fantasy Football API and tracks:
 - All-time Performance
 - Head-to-Head
 - High/Low Lights
