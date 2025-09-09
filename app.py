@@ -8,15 +8,15 @@ import pandas as pd
 import os
 
 # Data Reads (from github)
-dfLeagueStats = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/tpdash_alltimestats.csv')
-dfPerformanceCards = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/tpdash_alltimecards.csv')
-dfYearbyYear = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/tpdash_yearlystats.csv')
-dfYearbyYearAvg = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/tpdash_yearlyavgstats.csv')
-dfMostSingleWeekPoints = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/tpdash_bestweeks.csv')
-dfLargestWins = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/tpdash_bestwins.csv')
-dfLeastSingleWeekPoints = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/tpdash_worstweeks.csv')
-dfWorstLosses = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/tpdash_worstlosses.csv')
-dfOpponents = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/tpdash_opponents.csv')
+dfLeagueStats = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/data/tpdash_alltimestats.csv')
+dfPerformanceCards = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/data/tpdash_alltimecards.csv')
+dfYearbyYear = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/data/tpdash_yearlystats.csv')
+dfYearbyYearAvg = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/data/tpdash_yearlyavgstats.csv')
+dfMostSingleWeekPoints = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/data/tpdash_bestweeks.csv')
+dfLargestWins = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/data/tpdash_bestwins.csv')
+dfLeastSingleWeekPoints = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/data/tpdash_worstweeks.csv')
+dfWorstLosses = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/data/tpdash_worstlosses.csv')
+dfOpponents = pd.read_csv('https://raw.githubusercontent.com/dukes101/lom-reference/refs/heads/main/data/tpdash_opponents.csv')
 
 # Initialize Dash App
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
