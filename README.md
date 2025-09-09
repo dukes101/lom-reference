@@ -6,7 +6,7 @@ This project is an interactive dashboard summarizing 8 years (and counting) of h
 - High/Low Lights
 - Year-over-Year Stats
 
-The dashboard is built with:
+The dashboard can be found here: [link] and is built with:
 - Python
 - Jupyter Notebooks (data ingestion + analysis)
 - Dash/Plotly (for interactive dashboard)
@@ -19,14 +19,16 @@ The dashboard is built with:
 - Consolidates the historical regular season and final standings
  
 `Analysis.ipynb`
-- Calculates all data sources for the dashboard (performance, accolades, head-to-head, highlights, lowlights, year-over-year stats)
+- Calculates metrics for the dashboard (performance, accolades/cards, head-to-head, highlights, lowlights, year-over-year stats)
 
 ## Data
-`headtoheadsummary.csv` - a head-to-head summary of every possible matchup in the leagu
+`headtoheadsummary.csv`
+
+This table is a raw head-to-head summary. Refer to `opponents.csv` for a clean version
 
 `matchups_clean.csv`
 
-This **matchups** records every game played in league history, including both regular season and playoff matchups.  
+This **matchups** table records every game played in league history, including both regular season and playoff matchups.  
 Each row represents a **unique weekly matchup** between two teams, with detailed results:  
 
 - **Year** → Season of the matchup  
@@ -43,17 +45,63 @@ Each row represents a **unique weekly matchup** between two teams, with detailed
 
 This table is the **foundation of the league’s history**, enabling detailed head-to-head analysis, tracking playoff runs, and highlighting record-breaking weeks.
 
-`standings_final.csv` - final standings from every season (hard-coded)
+`standings_final.csv`
 
-`standings_regular.csv` - regular season final standings from every season
+This table documents the final standings from every season
 
-`tpdash_alltimecards.csv` - accolades for each team
+`standings_regular.csv`
 
-`tpdash_alltimestats.csv` - statistics for each team and where they rank all time
+This table documents the regular-season standings from every season
 
-`tpdash_bestweeks.csv` - a teams top 3 weeks in terms of total points scored
+`tpdash_alltimecards.csv`
 
-`tpdash_bestwins.csv` - a teams top 3 largest wins in terms of scoring margin
+The table is an **all-time accolades summary** for every team in the league.  
+Each row represents a **single team’s career achievements** across all seasons played.  
+
+- **Team** → The fantasy team being summarized  
+- **Championships** → Number of league championships won (and years they won)  
+- **Top 3 Finishes** → Total times finishing in the top 3 overall  
+- **Top 5 Finishes** → Total times finishing in the top 5 overall  
+- **Playoff Appearances** → Total playoff berths earned  
+- **Seasons Played** → Total seasons the team has participated in  
+- **All Time Record** → Combined win–loss-tie record across all games  
+- **Playoff Record** → Combined win–loss record in playoff games only  
+- **Reg Champ** → Number of regular season first-place finishes  
+- **Last Place** → Number of last-place finishes  
+
+`tpdash_alltimestats.csv`
+
+This is an **all-team stats table**, which compares every team across a variety of performance metrics.  
+Each row represents the value of a **single metric for a single team**, along with its standing in the league.  
+
+- **Team** → The fantasy team being evaluated  
+- **Metric** → The statistic being measured
+- **Value** → The team’s value for that specific metric  
+- **League Rank** → The team’s ranking for that metric compared to all league members 
+
+`tpdash_bestweeks.csv`
+
+This table tracks each team’s **best single-week performances**, capturing the games where scoring output was at its highest.  
+Each row represents one of the **top 3 highest-scoring weeks for a given team**, with the following details:  
+
+- **Year** → Season when the high score occurred  
+- **Week** → Specific week of the matchup  
+- **Team** → The team that posted the high score  
+- **Score** → Total points scored by the team that week  
+- **Opponent** → The opposing team in that matchup  
+- **All Time Rank** → Ranking of the score compared to the *highest scores in league history*
+
+`tpdash_bestwins.csv`
+
+This table tracks each team's **best wins**.  
+Each row represents one of the **top 3 best wins for a given team**, with details about when and how it happened:  
+
+- **Year** → Season when the win occurred  
+- **Week** → Specific week of the matchup  
+- **Team** → The team that won  
+- **Opponent** → The opposing team that loss  
+- **Winning Margin** → Point differential (Team’s score – Opponent’s score)  
+- **All Time Rank** → Overall ranking of the win compared to *every win in league history* 
 
 `tpdash_opponents.csv`
 
@@ -67,18 +115,6 @@ Each row represents a **unique team vs. opponent combination** and provides the 
 - **Win %** → The percentage of games won by *Team* against that opponent  
 - **Total Matchups** → How many times the two teams have faced each other over the league’s history  
 
-`tpdash_worstlosses.csv`
-
-This table tracks each team's **worst losses**, highlighting the biggest defeats in league history.  
-Each row represents one of the **top 3 worst losses for a given team**, with details about when and how it happened:  
-
-- **Year** → Season when the loss occurred  
-- **Week** → Specific week of the matchup  
-- **Team** → The team that suffered the loss  
-- **Opponent** → The opposing team that delivered the loss  
-- **Losing Margin** → Point differential (Opponent’s score – Team’s score)  
-- **All Time Rank** → Overall ranking of the loss compared to *every loss in league history* 
-
 `tpdash_worstweeks.csv`
 
 This table tracks each team’s **worst single-week performances**, capturing the games where scoring output was at its lowest.  
@@ -89,7 +125,19 @@ Each row represents one of the **top 3 lowest-scoring weeks for a given team**, 
 - **Team** → The team that posted the low score  
 - **Score** → Total points scored by the team that week  
 - **Opponent** → The opposing team in that matchup  
-- **All Time Rank** → Ranking of the score compared to the *lowest scores in league history*  
+- **All Time Rank** → Ranking of the score compared to the *lowest scores in league history*
+
+`tpdash_worstlosses.csv`
+
+This table tracks each team's **worst losses**, highlighting the biggest defeats in league history.  
+Each row represents one of the **top 3 worst losses for a given team**, with details about when and how it happened:  
+
+- **Year** → Season when the loss occurred  
+- **Week** → Specific week of the matchup  
+- **Team** → The team that suffered the loss  
+- **Opponent** → The opposing team that delivered the loss  
+- **Losing Margin** → Point differential (Opponent’s score – Team’s score)  
+- **All Time Rank** → Overall ranking of the loss compared to *every loss in league history*   
 
 `tpdash_yearlyavgstats.csv`
 
