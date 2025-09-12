@@ -1043,3 +1043,13 @@ Year,Week,Team,Score,Opponent,Opponent_score,Score_margin,Outcome,Type,Top_scori
 2024,14.0,Gavin,242.2,Evan,316.2,-74.0,Loss,Playoff,0,1
 2024,15.0,Evan,303.7,Zachary,299.1,4.599999999999966,Win,Playoff,1,0
 2024,15.0,Zachary,299.1,Evan,303.7,-4.599999999999966,Loss,Playoff,0,1
+2025,1.0,Luca,176.4,Nate,121.2,55.2,Win,Regular,1,0
+2025,1.0,Hayden,157.4,Matt,103.0,54.400000000000006,Win,Regular,0,0
+2025,1.0,Cody,128.6,Alexander,95.3,33.3,Win,Regular,0,0
+2025,1.0,Evan,124.9,Dylan,93.6,31.30000000000001,Win,Regular,0,0
+2025,1.0,Nate,121.2,Luca,176.4,-55.2,Loss,Regular,0,0
+2025,1.0,Zachary,112.6,Gavin,109.1,3.5,Win,Regular,0,0
+2025,1.0,Gavin,109.1,Zachary,112.6,-3.5,Loss,Regular,0,0
+2025,1.0,Matt,103.0,Hayden,157.4,-54.400000000000006,Loss,Regular,0,0
+2025,1.0,Alexander,95.3,Cody,128.6,-33.3,Loss,Regular,0,0
+2025,1.0,Dylan,93.6,Evan,124.9,-31.30000000000001,Loss,Regular,0,1
