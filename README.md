@@ -6,7 +6,7 @@ This project is an interactive dashboard built from scratch, summarizing 8 years
 - High/Low Lights
 - Year-over-Year Stats
 
-The dashboard can be found [here]([https://example.com](https://league-of-morons-reference.onrender.com)) and is built using
+The dashboard can be found [here](https://league-of-morons-reference.onrender.com) and is built using
 - Python
 - Jupyter Notebooks (data ingestion + analysis)
 - Dash/Plotly (for interactive dashboard)
