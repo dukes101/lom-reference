@@ -111,7 +111,7 @@ app.layout = dbc.Container(
                             ,style={'height': '305px'}
                         )
                     ],className = 'grid'
-                    ),xs=12, md=4
+                    ),xs=12, md=6, lg=4
                 )
                 ,dbc.Col( # Cards
                     html.Div([
@@ -175,7 +175,7 @@ app.layout = dbc.Container(
                                                  ,className='card')
                             ],className = 'card-row')
                     ],className = 'grid'
-                    ),xs=12, md=4
+                    ),xs=12, md=6, lg=4
                 )
                 ,dbc.Col( # H2H
                     html.Div([
@@ -188,7 +188,7 @@ app.layout = dbc.Container(
                             ,dashGridOptions={"rowHeight": 30, "headerHeight": 35, "animateRows": False}
                             ,style={'height': '305px'})
                     ],className='grid'
-                    ),xs=12, md=4
+                    ),xs=12, md=6, lg=4
                 )
             ]
         )
@@ -222,7 +222,7 @@ app.layout = dbc.Container(
                                 ,style={'height': '125px'})
                         ])
                     ],className='grid'
-                    ),xs=12, md=4
+                    ),xs=12, md=6, lg=4
                 )
                 ,dbc.Col( # Lowlights
                     html.Div([
@@ -250,7 +250,7 @@ app.layout = dbc.Container(
                                 ,style={'height': '125px'})
                         ])
                     ],className='grid'
-                    ),xs=12, md=4
+                    ),xs=12, md=6, lg=4
                 )
                 ,dbc.Col( # Graph
                     html.Div([
@@ -269,7 +269,7 @@ app.layout = dbc.Container(
                             ,style={'height': '400px'}
                             ,config={'responsive': True})
                     ],className = 'grid'
-                    ),xs=12, md=4
+                    ),xs=12, md=6, lg=4
                 )
             ]
         )
